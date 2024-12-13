@@ -1,0 +1,65 @@
+.sorry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+
+  .title {
+    font-size: toRem(50);
+    text-transform: uppercase;
+    letter-spacing: toRem(10);
+    padding-top: 4rem;
+  }
+  .text {
+    width: 60%;
+    font-size: toRem(28);
+    padding-top: toRem(20);
+    padding-bottom: toRem(80);
+  }
+}
+
+//MEDIA QUERYS
+@media only screen and (max-width: $mq2) {
+  .sorry {
+    .text {
+      width: 90%;
+    }
+  }
+}
+@media only screen and (max-width: $mq3) {
+  .sorry {
+    .title {
+      font-size: toRem(30);
+    }
+    .text {
+      font-size: toRem(22);
+      padding-top: toRem(20);
+      padding-bottom: toRem(40);
+    }
+  }
+}
+@media only screen and (max-width: $mq4) {
+  .sorry {
+    br {
+      display: none;
+      opacity: 0;
+    }
+    .title {
+      font-size: toRem(28);
+      padding-top: 0rem;
+    }
+  }
+}
+@media only screen and (max-width: $mq5) {
+  .sorry {
+    .title {
+      font-size: toRem(24);
+    }
+    .text {
+      width: 100%;
+      font-size: toRem(20);
+    }
+  }
+}

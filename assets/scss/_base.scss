@@ -1,0 +1,66 @@
+// JUMPS MQ
+$mq1: 1360px;
+$mq2: 840px;
+$mq3: 570px;
+$mq4: 420px;
+$mq5: 360px;
+$mq6: 320px;
+
+html {
+  //FONTS
+  --neomsans: "NEOM Sans", arial, sans-serif;
+  --bukra: "29LT Bukra", arial, sans-serif;
+  --font-primary: var(--neomsans);
+  --font-secondary: var(--bukra);
+
+  /***COLORES***/
+  --negro: #1d1f22;
+  --verde: #005152;
+  --blanco: #ffffff;
+  --lima: #85be00;
+  /***END COLORES***/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  color: var(--lima);
+  padding: 0;
+  margin: 0;
+}
+h4 {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  color: var(--blanco);
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-primary);
+  color: var(--blanco);
+}
+
+a {
+  text-decoration: underline;
+  color: var(--lima);
+}
+
+label,
+input,
+textarea {
+  font-family: var(--font-primary);
+}
+
+sup {
+  font-size: 60%;
+}

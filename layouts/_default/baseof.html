@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{- partial "libsass" "scss/fonts.scss" -}} {{- partial "libsass" "scss/styles.scss" -}}
+    <title>NEOM FORMS</title>
+  </head>
+  <body>
+    <div class="wrapper {{.Page.Params.fondo}} {{.Page.Params.status}}">
+        <!-- CONTENT -->
+        <section class="container {{.Page.Params.custom}}">
+        {{ block "main" . }} {{ end }}
+        </section>
+        <!-- END CONTENT -->
+      </section>
+    </div>
+    <script src="/js/changeForms.js"></script>
+    <script src="/js/changeScore.js"></script>
+  </body>
+</html>

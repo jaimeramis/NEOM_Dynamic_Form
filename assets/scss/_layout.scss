@@ -1,0 +1,397 @@
+//SPECIAL JS CLASSES
+.ocultar {
+  display: none;
+  opacity: 0;
+}
+.revelar {
+  display: block;
+  opacity: 1;
+}
+//END SPECIAL JS CLASSES
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100dvh;
+  background-size: auto;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: var(--verde);
+}
+
+.fondo1 {
+  background-image: url("../images/fondo.png");
+}
+
+.container {
+  width: 90%;
+  grid-template-rows: 1fr auto;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 330px;
+  padding-bottom: 50px;
+
+  &.thanks {
+    grid-template-rows: auto;
+  }
+}
+
+//HEADER
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: toRem(294);
+  padding-top: toRem(50);
+
+  img {
+    width: 100%;
+  }
+}
+
+//END HEADER
+label {
+  font-size: toRem(20);
+  color: var(--blanco);
+  font-weight: 300;
+}
+//BUTTON
+.form-btn {
+  text-align: center;
+  font-size: toRem(16);
+  text-transform: uppercase;
+  color: #004747;
+  background-color: var(--lima);
+  border-radius: toRem(100);
+  border: none;
+  margin: toRem(80) auto;
+  padding: toRem(22) toRem(30);
+  font-weight: 700;
+  cursor: pointer;
+}
+//END BUTTON
+
+//FOOTER
+.footer {
+  padding-bottom: toRem(80);
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: toRem(38);
+
+  .footer-row {
+    display: flex;
+    gap: toRem(38);
+  }
+}
+
+.footer-title {
+  font-size: toRem(18);
+  padding-bottom: toRem(30);
+  text-align: center;
+}
+
+.social-item {
+  width: toRem(37);
+}
+//END FOOTER
+
+//FORMS
+//FORM GENERAL
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: toRem(700);
+  width: 100%;
+  text-align: left;
+
+  .form-section:not(:last-child) {
+    padding-bottom: toRem(64);
+  }
+
+  .form-title {
+    font-size: toRem(16);
+    padding-bottom: toRem(40);
+    text-transform: uppercase;
+  }
+
+  .form-subtitle {
+    font-size: toRem(18);
+    color: var(--blanco);
+    text-transform: uppercase;
+    padding-bottom: toRem(16);
+  }
+
+  .form-text {
+    font-size: toRem(14);
+    color: var(--blanco);
+    text-transform: uppercase;
+  }
+
+  .form-item {
+    .email {
+      width: 100%;
+      height: toRem(40);
+      border-radius: toRem(5);
+      border: none;
+      font-size: toRem(18);
+      padding-left: 10px;
+    }
+  }
+}
+
+//FORM RADIO
+.form-radio {
+  position: relative;
+  margin-top: toRem(20);
+
+  input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: toRem(32);
+    height: toRem(32);
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+.radio-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: toRem(80);
+}
+
+.radio {
+  display: none;
+  opacity: 0;
+}
+
+.radio-label {
+  line-height: toRem(30);
+  display: inline-block;
+  color: var(--blanco);
+  cursor: pointer;
+  position: relative;
+  padding-left: toRem(42);
+  letter-spacing: 0;
+  font-weight: 300;
+}
+
+.radio-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: toRem(30);
+  height: toRem(30);
+  border: 1px solid var(--lima);
+  /* Circle border color */
+  border-radius: 50%;
+  /* To make it a circle */
+}
+
+.radio:checked + .radio-label:after {
+  content: "";
+  position: absolute;
+  left: toRem(8.5);
+  top: toRem(8.8);
+  width: toRem(14);
+  height: toRem(14);
+  background-color: var(--blanco);
+  border-radius: 50%;
+  /* To make it a circle */
+}
+//END RADIO BUTTONS
+
+//FORM CHECKBOX
+.form-checkbox {
+  position: relative;
+  margin-top: toRem(20);
+  padding-left: toRem(45);
+
+  input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: toRem(32);
+    height: toRem(32);
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: toRem(32);
+  width: toRem(32);
+  background-color: transparent;
+  border: 1px solid var(--lima);
+  border-radius: toRem(6);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* Show the checkmark when checked */
+input:checked ~ .checkmark:after {
+  opacity: 1;
+}
+
+/* Style the checkmark/indicator */
+.form-checkbox .checkmark:after {
+  position: absolute;
+  left: 40%;
+  top: 16%;
+  transform: translate(-50%, -50%);
+  width: toRem(5);
+  height: toRem(15);
+  border: solid var(--blanco);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.form-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: toRem(80);
+  font-size: toRem(20);
+
+  .icon {
+    font-size: toRem(14);
+    height: toRem(14);
+  }
+}
+//END FORM CHECKBOX
+//FORM SELECT LANGUAGE
+/* The container must be positioned relative: */
+.form-selection {
+  position: relative;
+  max-width: toRem(540);
+  width: 100%;
+}
+
+.form-selection select {
+  display: none; /* Hide original SELECT element: */
+}
+
+.select-selected {
+  position: relative;
+  background-color: #f9f7f2;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  background-size: toRem(16);
+  background-image: url("../images/chevron.png");
+}
+
+/* Style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: var(--negro);
+  padding: toRem(8) 0;
+  padding-left: toRem(10);
+  cursor: pointer;
+  font-size: toRem(20);
+  //border-top-left-radius: toRem(5);
+  //border-top-right-radius: toRem(5);
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #f9f7f2;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+//END FORM SELECT LANGUAGE
+//END FORM GENERAL
+//END FORMS
+
+//MEDIA QUERYS
+@media only screen and (max-width: $mq1) {
+}
+
+@media only screen and (max-width: $mq2) {
+}
+
+@media only screen and (max-width: $mq3) {
+  .logo {
+    max-width: toRem(140);
+  }
+
+  //BUTTON
+  .form-btn {
+    margin: toRem(52) auto;
+  }
+  //END BUTTON
+
+  //FOOTER
+  .footer-logos {
+    display: block;
+
+    .footer-row {
+      display: flex;
+      justify-content: center;
+      padding-bottom: toRem(40);
+    }
+  }
+
+  //END FOOTER
+  //FORM GENERAL
+  .form-container {
+    .form-title {
+      font-size: toRem(16);
+    }
+    .form-subtitle {
+      font-size: toRem(17);
+    }
+    .form-text {
+      font-size: toRem(14);
+    }
+  }
+  .form-link {
+    font-size: toRem(18);
+  }
+}
+
+@media only screen and (max-width: $mq4) {
+  .select-selected {
+    background-position: 96% 50%;
+  }
+}
+@media only screen and (max-width: $mq5) {
+  label {
+    font-size: toRem(16);
+  }
+}
+@media only screen and (max-width: $mq6) {
+}
